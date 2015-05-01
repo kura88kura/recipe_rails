@@ -10,5 +10,17 @@
 
 <%= yield %>
 
+<ul class="nav navbar-nav pull-right">
+  <% if user_signed_in? %>
+  <li><%=link_to "#{current_user.email}" %></li>
+  <li class="active"><%= link_to "Logout", destroy_user_session_path%></li>
+  <td><%= link_to 'Edit', edit_recipe_path(recipe), :class => "btn btn-success btn-small"%></td>
+  <td><%= link_to 'Delete', recipe, method: :delete, data: {confirm: 'Are you sure?'}, :class => "btn btn-danger btn-small" %></td>
+  <%else%>
+  <li><%= link_to "Login", new_user_session_path %></li>
+  <li class="active"><%= link_to "SignUp", new_user_registration_path%></li>
+  <%end%>
+</ul>
+
 </body>
 </html>
