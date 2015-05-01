@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+food_types = ["Curry", "Dessert", "Sides", "Breakfast"]
+food_types.each{|d| FoodType.where(:name => d).create}

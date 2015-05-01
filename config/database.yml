@@ -16,18 +16,18 @@ default: &default
   pool: 5
   username: kura88kura
   password:
-  host: localhost
+  host: 127.0.0.1
 
 development:
   <<: *default
-  database: curry-nation_development
+  database: c9-dev
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: curry-nation_test
+  database: c9-test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -50,6 +50,6 @@ test:
 #
 production:
   <<: *default
-  database: curry-nation_production
-  username: curry-nation
-  password: <%= ENV['CURRY-NATION_DATABASE_PASSWORD'] %>
+  database: c9-prod
+  username: kura88kura
+  password: 
